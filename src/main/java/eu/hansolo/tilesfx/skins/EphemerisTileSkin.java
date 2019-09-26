@@ -19,6 +19,7 @@ package eu.hansolo.tilesfx.skins;
 import eu.hansolo.tilesfx.Tile;
 import eu.hansolo.tilesfx.Tile.TextSize;
 import eu.hansolo.tilesfx.Tile.TileColor;
+import eu.hansolo.tilesfx.TilesLocalization;
 import eu.hansolo.tilesfx.fonts.Fonts;
 import eu.hansolo.tilesfx.tools.Helper;
 import eu.hansolo.tilesfx.tools.SunMoonCalculator;
@@ -109,42 +110,42 @@ public class EphemerisTileSkin extends TileSkin {
         Helper.enableNode(titleText, !tile.getTitle().isEmpty());
 
         blueHourDotMorning       = new Circle(14, TileColor.BLUE.color);
-        blueHourTitleMorning     = new Text("Blue Hour");
+        blueHourTitleMorning     = new Text(TilesLocalization.property("EphemerisTileSkin.BlueHourLabel"));
         blueHourSunriseText      = new Text("--:--");
         blueHourSunriseTextBox   = new VBox(blueHourTitleMorning, blueHourSunriseText);
         blueHourSunriseBox       = new HBox(blueHourDotMorning, blueHourSunriseTextBox);
         blueHourSunriseBox.setAlignment(Pos.CENTER_LEFT);
 
         sunriseSymbol            = new WeatherSymbol(ConditionAndIcon.SUNRISE, 22, tile.getForegroundColor());
-        sunriseTitle             = new Text("Sunrise");
+        sunriseTitle             = new Text(TilesLocalization.property("EphemerisTileSkin.SunriseLabel"));
         sunriseText              = new Text("--:--");
         sunriseTextBox           = new VBox(sunriseTitle, sunriseText);
         sunriseBox               = new HBox(sunriseSymbol, sunriseTextBox);
         sunriseBox.setAlignment(Pos.CENTER_LEFT);
 
         goldenHourDotMorning     = new Circle(14, TileColor.ORANGE.color);
-        goldenHourTitleMorning   = new Text("Golden Hour");
+        goldenHourTitleMorning   = new Text(TilesLocalization.property("EphemerisTileSkin.GoldenHourLabel"));
         goldenHourSunriseText    = new Text("--:--");
         goldenHourSunriseTextBox = new VBox(goldenHourTitleMorning, goldenHourSunriseText);
         goldenHourSunriseBox     = new HBox(goldenHourDotMorning, goldenHourSunriseTextBox);
         goldenHourSunriseBox.setAlignment(Pos.CENTER_LEFT);
 
         goldenHourDotEvening     = new Circle(14, TileColor.ORANGE.color);
-        goldenHourTitleEvening   = new Text("Golden Hour");
+        goldenHourTitleEvening   = new Text(TilesLocalization.property("EphemerisTileSkin.GoldenHourLabel"));
         goldenHourSunsetText     = new Text("--:--");
         goldenHourSunsetTextBox  = new VBox(goldenHourTitleEvening, goldenHourSunsetText);
         goldenHourSunsetBox      = new HBox(goldenHourDotEvening, goldenHourSunsetTextBox);
         goldenHourSunsetBox.setAlignment(Pos.CENTER_LEFT);
 
         sunsetSymbol             = new WeatherSymbol(ConditionAndIcon.SUNSET, 22, tile.getForegroundColor());
-        sunsetTitle              = new Text("Sunset");
+        sunsetTitle              = new Text(TilesLocalization.property("EphemerisTileSkin.SunsetLabel"));
         sunsetText               = new Text("--:--");
         sunsetTextBox            = new VBox(sunsetTitle, sunsetText);
         sunsetBox                = new HBox(sunsetSymbol, sunsetTextBox);
         sunsetBox.setAlignment(Pos.CENTER_LEFT);
 
         blueHourDotEvening       = new Circle(14, TileColor.BLUE.color);
-        blueHourTitleEvening     = new Text("Blue Hour");
+        blueHourTitleEvening     = new Text(TilesLocalization.property("EphemerisTileSkin.BlueHourLabel"));
         blueHourSunsetText       = new Text("--:--");
         blueHourSunsetTextBox    = new VBox(blueHourTitleEvening, blueHourSunsetText);
         blueHourSunsetBox        = new HBox(blueHourDotEvening, blueHourSunsetTextBox);
