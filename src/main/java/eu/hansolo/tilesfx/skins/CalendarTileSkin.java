@@ -53,8 +53,8 @@ import static java.time.temporal.ChronoField.DAY_OF_MONTH;
 
 
 public class CalendarTileSkin extends TileSkin {
-    private final        DateTimeFormatter        DAY_FORMATTER        = DateTimeFormatter.ofPattern("EEEE", tile.getLocale());
-    private final        DateTimeFormatter        MONTH_YEAR_FORMATTER = DateTimeFormatter.ofPattern("MMMM YYYY", tile.getLocale());
+    private              DateTimeFormatter        dayFormatter;
+    private              DateTimeFormatter        monthYearFormatter;
     private              Border                   weekBorder;
     private              Text                     titleText;
     private              Text                     text;
@@ -76,9 +76,12 @@ public class CalendarTileSkin extends TileSkin {
     @Override protected void initGraphics() {
         super.initGraphics();
 
+        dayFormatter = DateTimeFormatter.ofPattern("EEEE", tile.getLocale());
+        monthYearFormatter = DateTimeFormatter.ofPattern("MMMM YYYY", tile.getLocale());
+
         final ZonedDateTime TIME = tile.getTime();
 
-        titleText = new Text(MONTH_YEAR_FORMATTER.format(TIME));
+        titleText = new Text(monthYearFormatter.format(TIME));
         titleText.setFill(tile.getTitleColor());
 
         clickHandler = e -> checkClick(e);
@@ -104,7 +107,7 @@ public class CalendarTileSkin extends TileSkin {
                                                  CornerRadii.EMPTY, BorderWidths.DEFAULT,
                                                  Insets.EMPTY));
 
-        text = new Text(DAY_FORMATTER.format(TIME));
+        text = new Text(dayFormatter.format(TIME));
         text.setFill(tile.getTextColor());
 
         getPane().getChildren().addAll(titleText, text);
@@ -302,8 +305,8 @@ public class CalendarTileSkin extends TileSkin {
     @Override protected void redraw() {
         super.redraw();
         final ZonedDateTime TIME = tile.getTime();
-        titleText.setText(MONTH_YEAR_FORMATTER.format(TIME));
-        text.setText(DAY_FORMATTER.format(TIME));
+        titleText.setText(monthYearFormatter.format(TIME));
+        text.setText(dayFormatter.format(TIME));
         resizeDynamicText();
         resizeStaticText();
 
