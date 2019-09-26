@@ -1,7 +1,7 @@
 ## TilesFX
-A JavaFX library containing tiles for Dashboards.
+A JavaFX library containing tiles for Dashboards. Original project is available [here](https://github.com/HanSolo/tilesfx).
 
-Donations are welcome at [Paypal](https://paypal.me/hans0l0)
+This fork will contain some fixes with tiles localization
 
 ## Overview
 ![Overview](https://raw.githubusercontent.com/HanSolo/tilesfx/master/TilesFX.png)
