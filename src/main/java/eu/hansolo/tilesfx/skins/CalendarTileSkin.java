@@ -201,6 +201,9 @@ public class CalendarTileSkin extends TileSkin {
                             if (dayCounter == day) {
                                 label.setBackground(bkgToday);
                                 label.setFont(bldFont);
+                            } else {
+                                label.setBackground(null);
+                                label.setFont(regFont);
                             }
                         } else if (dayCounter == day) {
                             if (appointments > 0) { label.setBorder(appmntBorder); } else { label.setBorder(null); }
@@ -209,6 +212,7 @@ public class CalendarTileSkin extends TileSkin {
                             label.setFont(bldFont);
                         } else {
                             if (appointments > 0) { label.setBorder(appmntBorder); } else { label.setBorder(null); }
+                            label.setBackground(null);
                             label.setTextFill(textColor);
                             label.setFont(regFont);
                         }
