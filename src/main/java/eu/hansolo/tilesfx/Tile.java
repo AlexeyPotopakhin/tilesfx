@@ -138,7 +138,8 @@ public class Tile extends Control {
                            DATE("DateTileSkin"), CALENDAR("CalendarTileSkin"), MATRIX("MatrixTileSkin"),
                            RADIAL_PERCENTAGE("RadialPercentageTileSkin"),
                            STATUS("StatusTileSkin"), BAR_GAUGE("BarGaugeTileSkin"),
-                           IMAGE("ImageTileSkin"), CLUSTER_MONITOR("ClusterMonitorTileSkin");
+                           IMAGE("ImageTileSkin"), CLUSTER_MONITOR("ClusterMonitorTileSkin"),
+                           SUN("SunTileSkin");
 
         public final String CLASS_NAME;
         SkinType(final String CLASS_NAME) {
@@ -5575,6 +5576,7 @@ public class Tile extends Control {
             case BAR_GAUGE        : return new BarGaugeTileSkin(Tile.this);
             case IMAGE            : return new ImageTileSkin(Tile.this);
             case CLUSTER_MONITOR  : return new ClusterMonitorTileSkin(Tile.this);
+            case SUN              : return new SunTileSkin(Tile.this);
             default               : return new TileSkin(Tile.this);
         }
     }
@@ -5770,6 +5772,7 @@ public class Tile extends Control {
             case BAR_GAUGE        : setSkin(new BarGaugeTileSkin(Tile.this)); break;
             case IMAGE            : setSkin(new ImageTileSkin(Tile.this)); break;
             case CLUSTER_MONITOR  : setSkin(new ClusterMonitorTileSkin(Tile.this)); break;
+            case SUN              : setSkin(new SunTileSkin(Tile.this)); break;
             default               : setSkin(new TileSkin(Tile.this)); break;
         }
         fireTileEvent(RESIZE_EVENT);
