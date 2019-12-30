@@ -77,7 +77,7 @@ public class CalendarTileSkin extends TileSkin {
         super.initGraphics();
 
         dayFormatter = DateTimeFormatter.ofPattern("EEEE", tile.getLocale());
-        monthYearFormatter = DateTimeFormatter.ofPattern("MMMM YYYY", tile.getLocale());
+        monthYearFormatter = DateTimeFormatter.ofPattern("MMMM uuuu", tile.getLocale());
 
         final ZonedDateTime TIME = tile.getTime();
 
